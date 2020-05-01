@@ -15,6 +15,7 @@
 <div id="map"></div>
 
 <script>
+Gyroscope.Gyroscope()
 	mapboxgl.accessToken = 'pk.eyJ1IjoidGhhdHRpY29ndXkiLCJhIjoiY2s5bnVpYXQ1MDQ0eTNlbXV5NjgzMm42aiJ9.fYGAaCtscGi3TIDAhYljHQ';
     var map = new mapboxgl.Map({
         container: 'map',
@@ -56,13 +57,13 @@
                 } else if (e.which === 37) {
                     // left
                     map.easeTo({
-                        bearing: map.getBearing() - deltaDegrees,
+                        bearing: map.Gyroscope.x() - deltaDegrees,
                         easing: easing
                     });
                 } else if (e.which === 39) {
                     // right
                     map.easeTo({
-                        bearing: map.getBearing() + deltaDegrees,
+                        bearing: map.Gyroscope.x() + deltaDegrees,
                         easing: easing
                     });
                 }
